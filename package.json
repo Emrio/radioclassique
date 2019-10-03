@@ -21,8 +21,14 @@
   "author": "Emrio <emrio@emrio.fr> (emrio.fr)",
   "license": "MIT",
   "dependencies": {
+    "@types/debug": "^4.1.5",
     "@types/node": "^12.7.9",
+    "@types/request": "^2.48.3",
+    "debug": "^4.1.1",
     "discord.js": "^11.5.1",
-    "typescript": "^3.6.3"
+    "node-opus": "^0.3.2",
+    "request": "^2.88.0",
+    "typescript": "^3.6.3",
+    "ytdl-core": "^0.29.7"
   }
 }
