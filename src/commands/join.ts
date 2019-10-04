@@ -2,6 +2,7 @@ import { Message } from 'discord.js'
 import { Bot } from '../Bot'
 import { sendEmbed } from '../methods/embeds'
 import { playRadio } from '../methods/liveRadio'
+import { bcinfo } from './bcinfo'
 import utils from '../utils'
 
 export async function join (message: Message): Promise<void> {
@@ -33,4 +34,5 @@ export async function join (message: Message): Promise<void> {
   playRadio(voiceChannel)
   // TODO: Set volume
   sendEmbed(message, utils.config.messages.joined)
+    .then(() => bcinfo(message))
 }
