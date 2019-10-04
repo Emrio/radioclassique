@@ -1,5 +1,5 @@
 {
-  "name": "radioclassique",
+  "name": "discord-radioclassique",
   "version": "1.0.0",
   "description": "📻🎵 Radio Classique sur Discord",
   "main": "build/src/index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/TheEmrio/radioclassique.git"
+    "url": "git://github.com/TheEmrio/discord-radioclassique.git"
   },
   "keywords": [
     "radio",
