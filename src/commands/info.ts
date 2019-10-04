@@ -10,6 +10,8 @@ export async function info (message: Message): Promise<void> {
     website: utils.config.radioclassique.website,
     dependencies: utils.dependencies.map(dep => `\`${dep}\``),
     uptime: parseTimelapse(Bot.uptime),
-    version: utils.packageJson.version
+    version: utils.packageJson.version,
+    memcur: utils.processInfo().memory.current,
+    memmax: utils.processInfo().memory.max
   }))
 }
