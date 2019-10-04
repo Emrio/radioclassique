@@ -10,7 +10,7 @@ export const currentBroadcast = { author: 'N/A', title: 'N/A', time: 'N/A' }
 export async function playRadio (channel: VoiceChannel): Promise<StreamDispatcher> {
   debug('Stream started at %o / %o', channel.guild.id, channel.id)
   return channel.connection.playStream(radio)
-    .on('end', () => debug('Stream ended at %o / %o', channel.guild.id, channel.id))
+    .on('end', (reason) => debug('Stream ended at %o / %o - Reason: %o', channel.guild.id, channel.id, reason))
     .on('error', console.error)
 }
 
