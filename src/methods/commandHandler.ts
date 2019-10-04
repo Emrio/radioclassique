@@ -9,9 +9,9 @@ export function setup (bot: Client): void {
 
 function commandHandler (message: Message): void {
   if (!message || message.author.bot || !message.content) return
-  const guildPrefix = '$' // TODO: Get with db
+  const guildPrefix = utils.config.defaults.prefix // TODO: Get with db
   if (!message.content.startsWith(guildPrefix)) return
-  const command = message.content.substring(guildPrefix.length).split(' ')[0]
+  const command = message.content.substring(guildPrefix.length).toLowerCase().split(' ')[0]
   if (Object.keys(commands).includes(command)) {
     commands[command as Command](message)
       .catch(err => {
