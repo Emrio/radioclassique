@@ -5,10 +5,8 @@ import { currentBroadcast } from '../methods/liveRadio'
 export async function bcinfo (message: Message): Promise<void> {
   sendEmbed(message, [
     {
-      title: `**Currently playing** (${currentBroadcast.time})`,
-      body: `**${currentBroadcast.author}**\n${currentBroadcast.title}`,
-      inline: true
-    },
-    { blank: true, inline: true }
+      title: `:musical_note: **Currently playing** (${currentBroadcast.time})`,
+      body: `**${currentBroadcast.author}**\n${currentBroadcast.title}`
+    }
   ])
 }

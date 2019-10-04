@@ -7,14 +7,14 @@ import utils from '../utils'
 export async function info (message: Message): Promise<void> {
   sendEmbed(message, [
     {
-      title: '**Radio Classique**',
+      title: ':information_source: **Radio Classique**',
       body: `
         Bot Discord pour écouter Radio Classique
         [Radio Classique](${utils.config.radioclassique.website})
         [GitHub](https://github.com/TheEmrio/discord-radioclassique)`
     },
     {
-      title: '**Information technique**',
+      title: ':tools: **Information technique**',
       body: `
         Libraries: ${utils.dependencies.map(dep => `\`${dep}\``)}
         Uptime: **${parseTimelapse(Bot.uptime)}**
