@@ -1,6 +1,6 @@
 import { RichEmbed, Message } from 'discord.js'
 
-export type Field = { title: string, body: string, blank?: false } | { blank: true }
+export type Field = { title: string, body: string, blank?: false, inline?: boolean } | { blank: true, inline?: boolean }
 
 export function generateEmbed (fields: Field[]): RichEmbed {
   const embed = new RichEmbed({
@@ -13,9 +13,9 @@ export function generateEmbed (fields: Field[]): RichEmbed {
   })
   fields.forEach(field => {
     if (field.blank === true) {
-      embed.addBlankField()
+      embed.addBlankField(field.inline)
     } else {
-      embed.addField(field.title, field.body)
+      embed.addField(field.title, field.body, field.inline)
     }
   })
   return embed
