@@ -12,6 +12,10 @@ export async function playRadio (channel: VoiceChannel): Promise<StreamDispatche
     .on('error', console.error)
 }
 
+export async function stopBroadcast (channel: VoiceChannel): Promise<void> {
+  return channel.connection.dispatcher.end()
+}
+
 async function updateCurrentBroadcast () {
   request.get(utils.config.radioclassique.updates)
     .on('error', console.error)

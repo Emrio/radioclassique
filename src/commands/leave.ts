@@ -1,5 +1,6 @@
 import { Message } from 'discord.js'
 import { sendEmbed } from '../methods/embeds'
+import { stopBroadcast } from '../methods/liveRadio'
 import utils from '../utils'
 
 export async function leave (message: Message): Promise<void> {
@@ -16,8 +17,9 @@ export async function leave (message: Message): Promise<void> {
     sendEmbed(message, utils.config.messages.notInMyChannel)
     return
   }
+
   if (voiceChannel.connection.dispatcher) {
-    voiceChannel.connection.dispatcher.end()
+    stopBroadcast(voiceChannel)
   }
   voiceChannel.leave()
 
