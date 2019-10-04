@@ -1,6 +1,6 @@
 import { RichEmbed, Message } from 'discord.js'
 
-export type Field = { title: string, body: string }
+export type Field = { title: string, body: string, blank?: false } | { blank: true }
 
 export function generateEmbed (fields: Field[]): RichEmbed {
   const embed = new RichEmbed({
@@ -12,7 +12,11 @@ export function generateEmbed (fields: Field[]): RichEmbed {
     thumbnail: { url: 'https://www.radioclassique.fr/wp-content/thumbnails/themes/radioclassique/images/logo-radioclassique-600x600-tt-width-600-height-630-fill-0-crop-1-bgcolor-ffffff.png' }
   })
   fields.forEach(field => {
-    embed.addField(field.title, field.body)
+    if (field.blank === true) {
+      embed.addBlankField()
+    } else {
+      embed.addField(field.title, field.body)
+    }
   })
   return embed
 }
