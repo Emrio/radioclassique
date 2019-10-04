@@ -2,13 +2,15 @@ import { PassThrough } from 'stream'
 import { VoiceChannel, StreamDispatcher } from 'discord.js'
 import request from 'request'
 import utils from '../utils'
+const debug = utils.debug('liveRadio')
 
 export const radio = new PassThrough()
 export const currentBroadcast = { author: 'N/A', title: 'N/A', time: 'N/A' }
 
 export async function playRadio (channel: VoiceChannel): Promise<StreamDispatcher> {
+  debug('Stream started at %o / %o', channel.guild.id, channel.id)
   return channel.connection.playStream(radio)
-    .on('end', () => console.log('end'))
+    .on('end', () => debug('Stream ended at %o / %o', channel.guild.id, channel.id))
     .on('error', console.error)
 }
 
