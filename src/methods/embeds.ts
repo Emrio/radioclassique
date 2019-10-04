@@ -1,4 +1,5 @@
 import { RichEmbed, Message } from 'discord.js'
+import utils from '../utils'
 
 export type Field = { title: string, body: string, blank?: false, inline?: boolean } | { blank: true, inline?: boolean }
 
@@ -8,7 +9,7 @@ export function generateEmbed (fields: Field[]): RichEmbed {
       text: 'Radio Classique'
     },
     color: 12258336,
-    thumbnail: { url: 'https://www.radioclassique.fr/wp-content/thumbnails/themes/radioclassique/images/logo-radioclassique-600x600-tt-width-600-height-630-fill-0-crop-1-bgcolor-ffffff.png' }
+    thumbnail: { url: utils.config.radioclassique.icon }
   })
   fields.forEach(field => {
     if (field.blank === true) {
