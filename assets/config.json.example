@@ -75,11 +75,11 @@
     "info": [
       {
         "title": ":information_source: **Radio Classique**",
-        "body": "Bot Discord pour écouter Radio Classique\n[Radio Classique]({website})\n[GitHub](https://github.com/TheEmrio/discord-radioclassique)"
+        "body": "Discord Bot for listening to Radio Classsique in Discord channels!\n[Radio Classique]({website})\n[GitHub](https://github.com/TheEmrio/discord-radioclassique)"
       },
       {
-        "title": ":tools: **Information technique**",
-        "body": "Libraries: {dependencies}\nUptime: **{uptime}**\nDeployed version: **v{version}**\nMemory usage: **{memcur} MB/{memmax} MB**"
+        "title": ":tools: **Technical information**",
+        "body": "Libraries: {dependencies}\nUptime: **{uptime}**\nDeployed version: **v{version}**\nMemory usage: **{memcur} MB/{memmax} MB**\nDownload speed: **{curdlspeed}/s**"
       }
     ],
     "help": [
