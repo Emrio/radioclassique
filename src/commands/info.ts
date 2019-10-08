@@ -1,7 +1,7 @@
 import { Message } from 'discord.js'
 import { Bot } from '../Bot'
 import { sendEmbed } from '../methods/embeds'
-import { parseTimelapse } from '../methods/parseTimelapse'
+import { parseTimelapse, parseDataSize } from '../methods/parse'
 import { format } from '../methods/format'
 import utils from '../utils'
 
