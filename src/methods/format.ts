@@ -11,12 +11,14 @@ export function format <T> (obj: string | T | T[], c: Correspondances) {
     for (const v in c) {
       obj = obj.replace(new RegExp(`{${v}}`, 'g'), c[v])
     }
+    return obj
   } else if (Array.isArray(obj)) {
-    obj = obj.map(elem => format(elem, c))
+    return obj.map(elem => format(elem, c))
   } else {
+    const newobj: any = {}
     for (const key in obj) {
-      obj[key] = format(obj[key], c)
+      newobj[key] = format(obj[key], c)
     }
+    return newobj as T
   }
-  return obj
 }
