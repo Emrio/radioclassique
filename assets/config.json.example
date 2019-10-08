@@ -1,0 +1,100 @@
+{
+  "defaults": {
+    "prefix": "$"
+  },
+  "updateInterval": 30000,
+  "updateSpeed": 0.5,
+  "token": "** TOKEN HERE **",
+  "radioclassique": {
+    "liveradio": "URL TO LIVE GENERATED MUSIC FILE",
+    "updates": "API ENDPOINT FOR CURRENT BRODCAST UPDATES",
+    "icon": "RADIO CLASSIQUE ICON URL",
+    "website": "RADIO CLASSIQUE WEBSITE"
+  },
+  "messages": {
+    "error": [{
+      "title": ":x: **Error**",
+      "body": "A fatal error occured. Please try again."
+    }],
+    "noVoiceChannel": [{
+      "title": ":x: **No voice channel**",
+      "body": "You are not in a voice channel"
+    }],
+    "noPermissionToConnect": [{
+      "title": ":x: **Unable to connect**",
+      "body": "I need the 'Connect' permission to play music!"
+    }],
+    "noPermissionToPlay": [{
+      "title": ":x: **Unable to play**",
+      "body": "I need the 'Speak' permission to play music!"
+    }],
+    "cantJoin": [{
+      "title": ":x: **Unable to join**",
+      "body": "I can't your voice channel.\nPlease make sure the channel is not full and that I have sufficient permissions to join it."
+    }],
+    "joined": [{
+      "title": ":white_check_mark: **Channel joined**",
+      "body": "Now playing Radio Classique..."
+    }],
+    "left": [{
+      "title": ":door: **Channel left**",
+      "body": "Broadcast terminated."
+    }],
+    "alreadyConnected": [{
+      "title": ":warning: **Already connected to a voice channel**",
+      "body": "I am already connected to a voice channel in this server. You may join it to enjoy Radio Classique!"
+    }],
+    "notConnected": [{
+      "title": ":x: **Not connected to a voice channel**",
+      "body": "I didn't join a voice channel in this server."
+    }],
+    "notInMyChannel": [{
+      "title": ":x: **Different channels**",
+      "body": "We are not in the same voice channel. Only members connected in my voice channel can use this command."
+    }],
+    "notBroadcasting": [{
+      "title": ":warning: **Not broadcasting**",
+      "body": "I am currently not broadcasting."
+    }],
+    "broadcastStopped": [{
+      "title": ":mute: **Broadcast halted**",
+      "body": "The broadcast has been stopped."
+    }],
+    "alreadyBroadcasting": [{
+      "title": ":warning: **Already broadcasting**",
+      "body": "I am already broadcasting."
+    }],
+    "broadcastStarted": [{
+      "title": ":speaker: **Broadcast started**",
+      "body": "Now playing Radio Classique."
+    }],
+    "bcinfo": [{
+      "title": ":musical_note: **Currently playing** ({time})",
+      "body": "**{author}**\n{title}"
+    }],
+    "info": [
+      {
+        "title": ":information_source: **Radio Classique**",
+        "body": "Bot Discord pour écouter Radio Classique\n[Radio Classique]({website})\n[GitHub](https://github.com/TheEmrio/discord-radioclassique)"
+      },
+      {
+        "title": ":tools: **Information technique**",
+        "body": "Libraries: {dependencies}\nUptime: **{uptime}**\nDeployed version: **v{version}**\nMemory usage: **{memcur} MB/{memmax} MB**"
+      }
+    ],
+    "help": [
+      {
+        "title": ":question: **Commands manual**",
+        "body": "My prefix in this server is **{prefix}**"
+      },
+      {
+        "title": ":radio: **Radio commands**",
+        "body": "`bcinfo`: Currently broadcasted title\n`join`: Join a voice channel and start broadcasting\n`leave`: Leave a voice channel and stop broadcasting\n`start`: Start broadcasting\n`stop`: Stop broadcasting"
+      },
+      {
+        "title": ":wastebasket: **Miscellaneous**",
+        "body": "`help`: Get this manual\n`info`: Information about the bot"
+      }
+    ]
+  }
+}
