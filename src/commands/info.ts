@@ -3,6 +3,7 @@ import { Bot } from '../Bot'
 import { sendEmbed } from '../methods/embeds'
 import { parseTimelapse, parseDataSize } from '../methods/parse'
 import { format } from '../methods/format'
+import { currentBroadcast } from '../methods/liveRadio'
 import utils from '../utils'
 
 export async function info (message: Message): Promise<void> {
@@ -12,6 +13,7 @@ export async function info (message: Message): Promise<void> {
     uptime: parseTimelapse(Bot.uptime),
     version: utils.packageJson.version,
     memcur: utils.processInfo().memory.current,
-    memmax: utils.processInfo().memory.max
+    memmax: utils.processInfo().memory.max,
+    curdlspeed: parseDataSize(currentBroadcast.speed)
   }))
 }
