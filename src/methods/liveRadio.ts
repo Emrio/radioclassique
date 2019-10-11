@@ -14,7 +14,6 @@ export async function playRadio (channel: VoiceChannel): Promise<StreamDispatche
       debug('Stream ended at %o / %o - Reason: %o', channel.guild.id, channel.id, reason)
       if (reason !== 'user') {
         debug('Reconnecting to stream...')
-        stopBroadcast(channel) // XXX: May be unneccessary
         playRadio(channel)
       }
     })
