@@ -15,9 +15,9 @@ function commandHandler (message: Message): void {
   if (Object.keys(commands).includes(command)) {
     commands[command as Command](message)
       .catch(err => {
-        console.error(err)
+        console.trace(err)
         return sendEmbed(message, utils.config.messages.error)
       })
-      .catch(console.error)
+      .catch(console.trace)
   }
 }

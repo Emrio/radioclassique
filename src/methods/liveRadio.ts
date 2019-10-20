@@ -17,7 +17,7 @@ export async function playRadio (channel: VoiceChannel): Promise<StreamDispatche
         playRadio(channel)
       }
     })
-    .on('error', console.error)
+    .on('error', console.trace)
 }
 
 export async function stopBroadcast (channel: VoiceChannel): Promise<void> {
@@ -26,7 +26,7 @@ export async function stopBroadcast (channel: VoiceChannel): Promise<void> {
 
 async function updateCurrentBroadcast () {
   request.get(utils.config.radioclassique.updates)
-    .on('error', console.error)
+    .on('error', console.trace)
     .on('data', data => {
       const update = JSON.parse(data.toString())
       currentBroadcast.author = update.auteur || 'N/A'
@@ -57,13 +57,13 @@ async function start () {
             curDownloadedContentLength += data.length
           })
           .on('error', (err) => {
-            console.error(err)
+            console.trace(err)
             debug('Fatal error: restarting service...')
             return setTimeout(resolve, 1000)
           })
           .pipe(radio)
       } catch (err) {
-        console.error(err)
+        console.trace(err)
         debug('Fatal error: restarting service...')
         setTimeout(resolve, 1000)
       }
@@ -72,5 +72,5 @@ async function start () {
 }
 
 start()
-setInterval(() => updateCurrentBroadcast().catch(console.error), utils.config.updateInterval)
+setInterval(() => updateCurrentBroadcast().catch(console.trace), utils.config.updateInterval)
 updateCurrentBroadcast()
